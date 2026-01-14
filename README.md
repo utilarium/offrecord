@@ -201,3 +201,4 @@ Pattern-based detection cannot catch all secrets:
 
 Apache-2.0
 
+TEST
