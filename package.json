@@ -1,6 +1,6 @@
 {
   "name": "@utilarium/offrecord",
-  "version": "0.0.2-dev.0",
+  "version": "0.0.3-dev.0",
   "description": "offrecord keeps secrets off the record - secure secret handling, redaction, and memory safety utilities.",
   "type": "module",
   "main": "./dist/offrecord.cjs",
