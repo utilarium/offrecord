@@ -2,7 +2,7 @@
 
 > Keep secrets off the record - secure secret handling, redaction, and memory safety utilities.
 
-[![npm version](https://badge.fury.io/js/%40theunwalked%2Foffrecord.svg)](https://www.npmjs.com/package/@theunwalked/offrecord)
+[![npm version](https://badge.fury.io/js/%40utilarium%2Foffrecord.svg)](https://www.npmjs.com/package/@utilarium/offrecord)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Features
@@ -16,7 +16,7 @@
 ## Installation
 
 ```bash
-npm install @theunwalked/offrecord
+npm install @utilarium/offrecord
 ```
 
 ## Quick Start
@@ -24,7 +24,7 @@ npm install @theunwalked/offrecord
 ### Redacting Secrets
 
 ```typescript
-import { getRedactor } from '@theunwalked/offrecord';
+import { getRedactor } from '@utilarium/offrecord';
 
 const redactor = getRedactor();
 
@@ -42,7 +42,7 @@ const result = redactor.detect(log);
 ### Registering Custom Patterns
 
 ```typescript
-import { getRedactor } from '@theunwalked/offrecord';
+import { getRedactor } from '@utilarium/offrecord';
 
 const redactor = getRedactor();
 
@@ -59,7 +59,7 @@ redactor.register({
 ### SecureString
 
 ```typescript
-import { SecureString, secure, secureFromEnv } from '@theunwalked/offrecord';
+import { SecureString, secure, secureFromEnv } from '@utilarium/offrecord';
 
 // Create a secure string
 const apiKey = secure('sk-secret-key-12345');
@@ -84,7 +84,7 @@ const envKey = secureFromEnv('API_KEY');
 ### Safe Errors
 
 ```typescript
-import { createSafeError, withSafeErrors } from '@theunwalked/offrecord';
+import { createSafeError, withSafeErrors } from '@utilarium/offrecord';
 
 // Sanitize an existing error
 try {
@@ -165,7 +165,7 @@ offrecord is designed to work with provider-specific libraries. Each provider re
 
 ```typescript
 // In your provider library (e.g., execution-openai)
-import { getRedactor } from '@theunwalked/offrecord';
+import { getRedactor } from '@utilarium/offrecord';
 
 getRedactor().register({
   name: 'openai',

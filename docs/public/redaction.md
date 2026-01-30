@@ -5,7 +5,7 @@ The redaction system in offrecord provides pattern-based detection and removal o
 ## Basic Usage
 
 ```typescript
-import { getRedactor } from '@theunwalked/offrecord';
+import { getRedactor } from '@utilarium/offrecord';
 
 const redactor = getRedactor();
 
@@ -19,7 +19,7 @@ const safe = redactor.redact('api_key="sk-abc123xyz789"');
 Register patterns specific to your application:
 
 ```typescript
-import { getRedactor } from '@theunwalked/offrecord';
+import { getRedactor } from '@utilarium/offrecord';
 
 const redactor = getRedactor();
 
@@ -76,13 +76,13 @@ You can use the global singleton or create isolated instances:
 
 ```typescript
 // Global singleton
-import { getRedactor, configureRedactor } from '@theunwalked/offrecord';
+import { getRedactor, configureRedactor } from '@utilarium/offrecord';
 
 configureRedactor({ /* config */ });
 const global = getRedactor();
 
 // Isolated instance
-import { SecretRedactor } from '@theunwalked/offrecord';
+import { SecretRedactor } from '@utilarium/offrecord';
 
 const local = new SecretRedactor({ /* config */ });
 ```
@@ -93,7 +93,7 @@ offrecord is designed to work with provider-specific libraries. Each provider ca
 
 ```typescript
 // In your provider library (e.g., execution-openai)
-import { getRedactor } from '@theunwalked/offrecord';
+import { getRedactor } from '@utilarium/offrecord';
 
 getRedactor().register({
   name: 'openai',

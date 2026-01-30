@@ -14,7 +14,7 @@ function getRedactor(): SecretRedactor
 
 **Example:**
 ```typescript
-import { getRedactor } from '@theunwalked/offrecord';
+import { getRedactor } from '@utilarium/offrecord';
 
 const redactor = getRedactor();
 const safe = redactor.redact('api_key=secret');
@@ -266,6 +266,6 @@ import type {
   RedactorConfig,
   SecureString,
   SafeErrorOptions,
-} from '@theunwalked/offrecord';
+} from '@utilarium/offrecord';
 ```
 

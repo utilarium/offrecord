@@ -16,7 +16,7 @@ if (userToken === secretToken) {
 Secure comparison prevents timing attacks by always comparing all bytes:
 
 ```typescript
-import { secureCompare } from '@theunwalked/offrecord';
+import { secureCompare } from '@utilarium/offrecord';
 
 // SECURE: Constant-time comparison
 if (secureCompare(userToken, secretToken)) {
@@ -29,7 +29,7 @@ if (secureCompare(userToken, secretToken)) {
 ### String Comparison
 
 ```typescript
-import { secureCompare } from '@theunwalked/offrecord';
+import { secureCompare } from '@utilarium/offrecord';
 
 const isValid = secureCompare(userInput, expectedValue);
 ```
@@ -37,7 +37,7 @@ const isValid = secureCompare(userInput, expectedValue);
 ### Buffer Comparison
 
 ```typescript
-import { secureCompareBuffers } from '@theunwalked/offrecord';
+import { secureCompareBuffers } from '@utilarium/offrecord';
 
 const buffer1 = Buffer.from('secret');
 const buffer2 = Buffer.from('secret');
@@ -50,7 +50,7 @@ const isEqual = secureCompareBuffers(buffer1, buffer2);
 Clear sensitive data from buffers when done:
 
 ```typescript
-import { secureZero } from '@theunwalked/offrecord';
+import { secureZero } from '@utilarium/offrecord';
 
 const secretBuffer = Buffer.from('sensitive-data');
 
@@ -66,7 +66,7 @@ secureZero(secretBuffer);
 Create buffers with automatic cleanup hints:
 
 ```typescript
-import { createSecureBuffer } from '@theunwalked/offrecord';
+import { createSecureBuffer } from '@utilarium/offrecord';
 
 const buffer = createSecureBuffer(32);
 // Use buffer...
@@ -79,7 +79,7 @@ secureZero(buffer);
 Convert strings to buffers for secure handling:
 
 ```typescript
-import { stringToSecureBuffer, secureBufferToString } from '@theunwalked/offrecord';
+import { stringToSecureBuffer, secureBufferToString } from '@utilarium/offrecord';
 
 // Convert string to buffer
 const buffer = stringToSecureBuffer('my-secret');
@@ -223,7 +223,7 @@ offrecord's secure buffers are built on `crypto.timingSafeEqual` but provide a m
 ### Token Validation
 
 ```typescript
-import { secureCompare } from '@theunwalked/offrecord';
+import { secureCompare } from '@utilarium/offrecord';
 
 function validateToken(provided: string, expected: string): boolean {
   // Constant-time comparison prevents timing attacks
@@ -234,7 +234,7 @@ function validateToken(provided: string, expected: string): boolean {
 ### Temporary Secret Storage
 
 ```typescript
-import { stringToSecureBuffer, secureBufferToString } from '@theunwalked/offrecord';
+import { stringToSecureBuffer, secureBufferToString } from '@utilarium/offrecord';
 
 function processSecret(secret: string): void {
   const buffer = stringToSecureBuffer(secret);

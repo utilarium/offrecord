@@ -16,7 +16,7 @@ console.log(JSON.stringify({ apiKey })); // {"apiKey":"sk-secret-key-12345"} �
 SecureString protects against accidental exposure:
 
 ```typescript
-import { secure } from '@theunwalked/offrecord';
+import { secure } from '@utilarium/offrecord';
 
 const apiKey = secure('sk-secret-key-12345');
 console.log({ apiKey });          // { apiKey: [SecureString] } ✓
@@ -28,7 +28,7 @@ console.log(JSON.stringify({ apiKey })); // {"apiKey":"[SecureString]"} ✓
 ### From a Value
 
 ```typescript
-import { secure, SecureString } from '@theunwalked/offrecord';
+import { secure, SecureString } from '@utilarium/offrecord';
 
 // Using factory function
 const key1 = secure('my-secret');
@@ -40,7 +40,7 @@ const key2 = new SecureString('my-secret');
 ### From Environment Variable
 
 ```typescript
-import { secureFromEnv } from '@theunwalked/offrecord';
+import { secureFromEnv } from '@utilarium/offrecord';
 
 // Returns SecureString | undefined
 const apiKey = secureFromEnv('API_KEY');
@@ -170,7 +170,7 @@ class ApiClient {
 SecureString is fully typed:
 
 ```typescript
-import { SecureString, secure, secureFromEnv } from '@theunwalked/offrecord';
+import { SecureString, secure, secureFromEnv } from '@utilarium/offrecord';
 
 // Type: SecureString
 const key = secure('value');

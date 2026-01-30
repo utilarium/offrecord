@@ -7,7 +7,7 @@ Safe errors prevent secrets from leaking through error messages and stack traces
 ### Sanitizing Errors
 
 ```typescript
-import { createSafeError } from '@theunwalked/offrecord';
+import { createSafeError } from '@utilarium/offrecord';
 
 try {
   throw new Error('Failed to connect with key sk-secret123');
@@ -22,7 +22,7 @@ try {
 Wrap functions to automatically sanitize any errors they throw:
 
 ```typescript
-import { withSafeErrors, withSafeErrorsAsync } from '@theunwalked/offrecord';
+import { withSafeErrors, withSafeErrorsAsync } from '@utilarium/offrecord';
 
 // Sync function
 const safeProcess = withSafeErrors((data: string) => {
@@ -55,7 +55,7 @@ try {
 Sanitize individual messages:
 
 ```typescript
-import { sanitizeMessage } from '@theunwalked/offrecord';
+import { sanitizeMessage } from '@utilarium/offrecord';
 
 const original = 'Connection failed: postgres://user:password@host/db';
 const safe = sanitizeMessage(original);
@@ -67,7 +67,7 @@ const safe = sanitizeMessage(original);
 Stack traces can contain sensitive paths and information:
 
 ```typescript
-import { sanitizeStack } from '@theunwalked/offrecord';
+import { sanitizeStack } from '@utilarium/offrecord';
 
 try {
   throw new Error('Error with api_key=secret123');
@@ -84,8 +84,8 @@ try {
 Customize safe error behavior:
 
 ```typescript
-import { createSafeError } from '@theunwalked/offrecord';
-import { getRedactor } from '@theunwalked/offrecord';
+import { createSafeError } from '@utilarium/offrecord';
+import { getRedactor } from '@utilarium/offrecord';
 
 // Custom redactor
 const customRedactor = getRedactor();
@@ -105,7 +105,7 @@ const safeError = createSafeError(error, customRedactor, {
 Add context to safe errors for debugging:
 
 ```typescript
-import { withSafeErrors } from '@theunwalked/offrecord';
+import { withSafeErrors } from '@utilarium/offrecord';
 
 const safeDbQuery = withSafeErrors(
   (sql: string) => db.query(sql),
@@ -172,7 +172,7 @@ try {
 Use SecureString to prevent secrets from appearing in errors:
 
 ```typescript
-import { secure, withSafeErrors } from '@theunwalked/offrecord';
+import { secure, withSafeErrors } from '@utilarium/offrecord';
 
 const apiKey = secure(process.env.API_KEY!);
 

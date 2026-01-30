@@ -13,14 +13,14 @@
 ## Installation
 
 ```bash
-npm install @theunwalked/offrecord
+npm install @utilarium/offrecord
 ```
 
 Or with your preferred package manager:
 
 ```bash
-yarn add @theunwalked/offrecord
-pnpm add @theunwalked/offrecord
+yarn add @utilarium/offrecord
+pnpm add @utilarium/offrecord
 ```
 
 ## Quick Start
@@ -28,7 +28,7 @@ pnpm add @theunwalked/offrecord
 ### Redacting Secrets
 
 ```typescript
-import { getRedactor } from '@theunwalked/offrecord';
+import { getRedactor } from '@utilarium/offrecord';
 
 const redactor = getRedactor();
 
@@ -46,7 +46,7 @@ const result = redactor.detect(log);
 ### Using SecureString
 
 ```typescript
-import { secure } from '@theunwalked/offrecord';
+import { secure } from '@utilarium/offrecord';
 
 // Create a secure string
 const apiKey = secure('sk-secret-key-12345');
@@ -62,7 +62,7 @@ const value = apiKey.reveal();
 ### Safe Error Handling
 
 ```typescript
-import { createSafeError } from '@theunwalked/offrecord';
+import { createSafeError } from '@utilarium/offrecord';
 
 try {
   throw new Error('Failed to connect with key sk-secret123');
